@@ -49,6 +49,10 @@ let server = http.createServer(function(request, response) {
         response.writeHead(403, {'Content-Type': 'text/plain'});
         response.write('Forbidden');
         response.end();
+    } else if (request.url === '/client') {
+        response.writeHead(200, {'Content-Type': 'text/plain'});
+        response.write('Coming Soon');
+        response.end();
     } else {
         response.writeHead(404, {'Content-Type': 'text/html'});
         response.end('<h2>404 Page Not Found!</h2>');
